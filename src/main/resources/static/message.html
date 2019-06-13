@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>查看留言</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <!--导航栏-->
+            <div class="col-md-12 column" style="margin-top: 30px">
+                <h4>
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#">班级管理</a>
+                        </li>
+                        <li>
+                            <a href="#">学生管理</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">查看留言</a>
+                        </li>
+                        <li>
+                            <a href="#">查看点赞</a>
+                        </li>
+
+                        <li class="dropdown pull-right">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                班主任<strong class="caret"></strong>
+                            </a>
+                            <!--下拉栏-->
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">登录</a>
+                                </li>
+                                <li>
+                                    <a href="#">注册</a>
+                                </li>
+                                <li>
+                                    <a href="#">修改信息</a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="#">安全退出</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </h4>
+
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <div class="col-sm-12">
+                            <div class="page-header">
+                                <h1>
+                                    查看留言
+                                    <small>显示学生留言信息</small>
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group col-sm-5">
+                                    <input type="text" class="form-control" />
+                                </div>
+                                <div class="col-sm-2" style="margin-left: 20px">
+                                    <button type="submit" class="btn btn-success">查询班号</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <!--留言面板-->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="label label-success" style="margin-right: 20px">班级编号: 1</span>
+                                    <span style="font-size: 15px">班级名称:外包161</span>
+                                    <!--删除按钮-->
+                                    <span class="pull-right" style="margin-top: -4px">
+                                        <a class="btn btn-danger btn-sm" href="">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                            删除
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="panel-body">
+                                    <h3 style="color: orange">
+                                        同学A
+                                        <small>138xxxxxxxx</small>
+                                    </h3>
+                                    <p>
+                                        您好
+                                    </p>
+                                    <p style="color: steelblue">
+                                        2019年06月09日 10:20
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="label label-success" style="margin-right: 20px">班级编号: 1</span>
+                                    <span style="font-size: 15px">班级名称:外包161</span>
+                                    <!--删除按钮-->
+                                    <span class="pull-right" style="margin-top: -4px">
+                                        <a class="btn btn-danger btn-sm" href="">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                            删除
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="panel-body">
+                                    <h3 style="color: orange">
+                                        同学B
+                                        <small>138xxxxxxxx</small>
+                                    </h3>
+                                    <p>
+                                        您好
+                                    </p>
+                                    <p style="color: steelblue">
+                                        2019年06月09日 10:10
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="label label-success" style="margin-right: 20px">班级编号: 1</span>
+                                    <span style="font-size: 15px">班级名称:外包161</span>
+                                    <!--删除按钮-->
+                                    <span class="pull-right" style="margin-top: -4px">
+                                        <a class="btn btn-danger btn-sm" href="">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                            删除
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="panel-body">
+                                    <h3 style="color: orange">
+                                        同学C
+                                        <small>138xxxxxxxx</small>
+                                    </h3>
+                                    <p>
+                                        您好
+                                    </p>
+                                    <p style="color: steelblue">
+                                        2019年06月09日 10:00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <!--分页-->
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#">首页</a>
+                                </li>
+                                <li>
+                                    <a href="#">&lt;</a>
+                                </li>
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#">3</a>
+                                </li>
+                                <li>
+                                    <a href="#">4</a>
+                                </li>
+                                <li>
+                                    <a href="#">5</a>
+                                </li>
+                                <li>
+                                    <a href="#">&gt;</a>
+                                </li>
+                                <li>
+                                    <a href="#">尾页</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

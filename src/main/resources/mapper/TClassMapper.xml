@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.togogo.praise.mapper.TClassMapper">
+  <resultMap id="BaseResultMap" type="net.togogo.praise.entity.TClass">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="class_id" jdbcType="INTEGER" property="classId" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="class_size" jdbcType="INTEGER" property="classSize" />
+    <result column="class_teacher" jdbcType="VARCHAR" property="classTeacher" />
+    <result column="class_start_time" jdbcType="VARCHAR" property="classStartTime" />
+    <result column="class_end_time" jdbcType="VARCHAR" property="classEndTime" />
+    <result column="class_type" jdbcType="VARCHAR" property="classType" />
+  </resultMap>
+</mapper>

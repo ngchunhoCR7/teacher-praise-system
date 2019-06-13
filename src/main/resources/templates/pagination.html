@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--分页-->
+    <ul class="pagination" th:fragment="pagination">
+        <!--/*@thymesVar id="url" type="java.lang.String"*/-->
+        <!--/*@thymesVar id="pageList" type="com.github.pagehelper.PageInfo"*/-->
+        <li>
+            <a th:href="@{${url} + '?pageNum=' + ${pageList.firstPage}}">首页</a>
+        </li>
+        <li>
+            <a th:href="@{${url} + '?pageNum=' + ${pageList.prePage}}">&lt;</a>
+        </li>
+        <li th:each="page:${pageList.navigatepageNums}">
+            <a th:href="@{${url} + '?pageNum=' + ${page}}" th:text="${page}" th:value="${page}"></a>
+        </li>
+        <li>
+            <a th:href="@{${url} + '?pageNum=' + ${pageList.nextPage}}">&gt;</a>
+        </li>
+        <li>
+            <a th:href="@{${url} + '?pageNum=' + ${pageList.lastPage}}">尾页</a>
+        </li>
+    </ul>
+</body>
+</html>

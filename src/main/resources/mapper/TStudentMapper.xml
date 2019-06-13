@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.togogo.praise.mapper.TStudentMapper">
+  <resultMap id="BaseResultMap" type="net.togogo.praise.entity.TStudent">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="class_id" jdbcType="INTEGER" property="classId" />
+    <result column="reading_time" jdbcType="VARCHAR" property="readingTime" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="head_portrait" jdbcType="VARCHAR" property="headPortrait" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>班主任点赞</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="page-header">
+                    <h1>
+                        班主任点赞
+                        <small>为喜欢的班主任点赞</small>
+                    </h1>
+                </div>
+
+                <div class="row clearfix">
+                    <div class="col-md-8 column">
+                        <div class="row clearfix">
+                            <div class="col-md-12 column">
+                                <div class="page-header">
+                                    <h2>
+                                        留言板
+                                    </h2>
+                                </div>
+                                <!--遮罩窗体-->
+                                <div style="margin-bottom: 20px">
+                                    <a id="modal-1" href="#modal-container-1" role="button" class="btn btn-danger btn-block" data-toggle="modal">
+                                        <span class="glyphicon glyphicon-comment"></span>
+                                        &nbsp;&nbsp;踩一下
+                                    </a>
+                                    <div class="modal fade" id="modal-container-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form role="form">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                        <h4 class="modal-title" id="myModalLabel" style="color: crimson">
+                                                            留言板
+                                                        </h4>
+                                                    </div>
+                                                    <div class="modal-body" style="font-size: 15px">
+                                                        <div class="form-group">
+                                                            <label >学号</label>
+                                                            <input type="number" class="form-control" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>留言</label>
+                                                            <textarea class="form-control" rows="5" placeholder="请输入留言内容……"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer form-group">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                        <button type="submit" class="btn btn-primary">提交</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--留言面板-->
+                                <div>
+                                    <div class="panel panel-primary">
+                                        <div class="panel-body">
+                                            <h3 style="color: orange">
+                                                同学A
+                                            </h3>
+                                            <p>
+                                                您好
+                                            </p>
+                                            <p style="color: steelblue">
+                                                2019年06月09日 10:20
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-primary">
+                                        <div class="panel-body">
+                                            <h3 style="color: orange">
+                                                同学B
+                                            </h3>
+                                            <p>
+                                                666666666
+                                            </p>
+                                            <p style="color: steelblue">
+                                                2019年06月09日 10:10
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-primary">
+                                        <div class="panel-body">
+                                            <h3 style="color: orange">
+                                                同学C
+                                            </h3>
+                                            <p>
+                                                今天天气真是好
+                                            </p>
+                                            <p style="color: steelblue">
+                                                2019年06月09日 10:00
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--分页-->
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#">首页</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">&lt;</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">&gt;</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">尾页</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 column" style="margin-top: 50px">
+                        <div class="row clearfix">
+                            <!--表单-->
+                            <div class="col-md-12 column">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label>班级编号</label>
+                                        <input type="number" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>学生学号</label>
+                                        <input type="number" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>班主任</label>
+                                        <select class="form-control">
+                                            <option>方老师</option>
+                                            <option>钱老师</option>
+                                            <option>覃老师</option>
+                                            <option>罗老师</option>
+                                            <option>余老师</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>为他点赞</label>
+                                        <div class="col-sm-12" style="margin: 0 0 20px 0">
+                                            <div class="col-sm-2">
+                                                <label class="glyphicon glyphicon-heart" style="color: crimson"></label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="glyphicon glyphicon-heart" style="color: crimson"></label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="glyphicon glyphicon-heart" style="color: crimson"></label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="glyphicon glyphicon-heart" style="color: crimson"></label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4"> 4
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <label class="glyphicon glyphicon-heart" style="color: crimson"></label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5"> 5
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">提交点赞</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

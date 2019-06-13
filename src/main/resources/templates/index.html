@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>班级管理</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column" style="margin-top: 30px">
+            <!--导航栏-->
+            <h4>
+                <!--导航列表-->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a th:href="@{/teacher/index}">班级管理</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/teacher/stumanage}">学生管理</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/teacher/message}">查看留言</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/teacher/praise}">查看点赞</a>
+                    </li>
+
+                    <li class="dropdown pull-right">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            班主任<strong class="caret"></strong>
+                        </a>
+                        <!--下拉栏-->
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">登录</a>
+                            </li>
+                            <li>
+                                <a href="#">注册</a>
+                            </li>
+                            <li>
+                                <a href="#">修改信息</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="#">安全退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </h4>
+
+            <div class="row clearfix">
+                <div class="col-md-9 column">
+                    <!--页头-->
+                    <div class="page-header">
+                        <h1>
+                            班级管理
+                            <small>显示班级信息</small>
+                        </h1>
+                    </div>
+
+                    <!--查询表单-->
+                    <div>
+                        <form class="form-horizontal" role="form" th:action="@{/teacher/getclassbyid}">
+                            <div class="form-group col-sm-5">
+                                <input type="text" class="form-control" name="classId" value=""/>
+                            </div>
+                            <div class="form-group col-sm-2" style="margin-left: 20px">
+                                <button type="submit" class="btn btn-success">查询班号</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div>
+                        <!--表格-->
+                        <table class="table table-bordered table-hover">
+                            <!--表头-->
+                            <thead>
+                            <tr>
+                                <th>
+                                    班级编号
+                                </th>
+                                <th>
+                                    班级名称
+                                </th>
+                                <th>
+                                    班级人数
+                                </th>
+                                <th>
+                                    开课时间
+                                </th>
+                                <th>
+                                    结课时间
+                                </th>
+                                <th>
+                                    班级类型
+                                </th>
+                                <th style="width: 145px">
+                                    操作
+                                </th>
+                            </tr>
+                            </thead>
+                            <!--表格内容-->
+                            <tbody>
+                            <tr class="success" th:each="tclass:${pageList.list}">
+                                <!--遍历列表-->
+                                <div th:object="${tclass}">
+                                    <td th:text="*{classId}"></td>
+                                    <td th:text="*{className}"></td>
+                                    <td th:text="*{classSize}"></td>
+                                    <td th:text="*{classStartTime}"></td>
+                                    <td th:text="*{classEndTime}"></td>
+                                    <td th:text="*{classType}"></td>
+                                    <td>
+                                        <!--操作按钮-->
+                                        <div style="margin: -5px 0 -5px 0">
+                                            <!--修改按钮-->
+                                            <span class="">
+                                                    <!--修改按钮-->
+                                                    <a id="modal-1" th:href="@{'#' + ${tclass.classId}}" role="button"
+                                                       class="btn btn-info btn-sm" data-toggle="modal">
+                                                        <span class="glyphicon glyphicon-file"></span>
+                                                        修改
+                                                    </a>
+                                                    <!--遮罩窗体-->
+                                                    <div class="modal fade" th:id="${tclass.classId}" role="dialog"
+                                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <form role="form" th:action="@{/teacher/upadateclass}" th:object="${tclass}">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close"
+                                                                                data-dismiss="modal" aria-hidden="true">×</button>
+                                                                        <h4 class="modal-title" id="myModalLabel"
+                                                                            style="color: steelblue">
+                                                                            修改班级
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div class="modal-body" style="font-size: 15px">
+                                                                        <div class="form-group">
+                                                                            <input type="hidden" class="form-control" name="classId" th:value="*{classId}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>班级名称</label>
+                                                                            <input type="text" class="form-control" name="className" th:value="*{className}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>班级人数</label>
+                                                                            <input type="number" class="form-control" name="classSize" th:value="*{classSize}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>开课时间</label>
+                                                                            <input type="date" class="form-control" name="classStartTime" th:value="*{classStartTime}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>结课时间</label>
+                                                                            <input type="date" class="form-control" name="classEndTime" th:value="*{classEndTime}">
+                                                                        </div>
+                                                                        <div class="form-group">
+                                                                            <label>班级类型</label>
+                                                                            <input type="text" class="form-control" name="classType" th:value="*{classType}">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer form-group">
+                                                                        <button type="button" class="btn btn-default"
+                                                                                data-dismiss="modal">关闭</button>
+                                                                        <button type="submit"
+                                                                                class="btn btn-primary">保存</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </span>
+
+                                            <!--删除按钮-->
+                                            <span class="">
+                                            <a class="btn btn-danger btn-sm" th:href="@{'/teacher/deleteclass?classId=' + ${tclass.classId}}">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                删除
+                                            </a>
+                                        </span>
+                                        </div>
+                                    </td>
+                                </div>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <!--分页-->
+                        <div class="pagination" th:replace="pagination::pagination"></div>
+                    </div>
+                </div>
+
+                <!--表单-->
+                <div class="col-md-3 column">
+                    <div style="margin: 40px 20px 0px 10px">
+                        <form class="form-horizontal" role="form" th:action="@{/teacher/insertclass}">
+                            <div class="form-group">
+                                <label>班级名称</label>
+                                <input type="text" class="form-control" name="className">
+                            </div>
+                            <div class="form-group">
+                                <label>班级人数</label>
+                                <input type="number" class="form-control" name="classSize">
+                            </div>
+                            <div class="form-group">
+                                <label>班主任</label>
+                                <input type="text" class="form-control" name="classTeacher">
+                            </div>
+                            <div class="form-group">
+                                <label>开课时间</label>
+                                <input type="date" class="form-control" name="classStartTime">
+                            </div>
+                            <div class="form-group">
+                                <label>结课时间</label>
+                                <input type="date" class="form-control" name="classEndTime">
+                            </div>
+                            <div class="form-group">
+                                <label>班级类型</label>
+                                <input type="text" class="form-control" name="classType">
+                            </div>
+                            <div class="form-group" style="margin-top: 35px">
+                                <button type="submit" class="btn btn-success btn-block">新增班级</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
