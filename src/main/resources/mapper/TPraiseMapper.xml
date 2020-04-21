@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="net.togogo.praise.mapper.TPraiseMapper">
-  <resultMap id="BaseResultMap" type="net.togogo.praise.entity.TPraise">
+<mapper namespace="com.teacher.praise.mapper.TPraiseMapper">
+  <resultMap id="BaseResultMap" type="com.teacher.praise.entity.TPraise">
     <!--
       WARNING - @mbg.generated
     -->
